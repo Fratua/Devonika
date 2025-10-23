@@ -1,0 +1,20 @@
+# Devonika - AI Software Engineer
+# Core dependencies
+
+# LLM providers
+anthropic>=0.39.0
+
+# Optional LLM providers (uncomment if needed)
+# openai>=1.0.0
+
+# Async support
+aiofiles>=23.0.0
+
+# CLI enhancements
+rich>=13.0.0
+click>=8.1.0
+
+# Development tools
+black>=24.0.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
