@@ -1,0 +1,32 @@
+CONTEXT MANAGEMENT
+
+Managing Large Projects:
+For extensive projects (e.g., MMORPGs, enterprise systems):
+
+1. Modular Development
+   - Break the system into independent modules
+   - Develop and test each module separately
+   - Integrate modules incrementally
+   - Use clear interfaces between modules
+
+2. Progress Tracking
+   Maintain a PROJECT_STATUS.md file tracking:
+   - Completed features
+   - In-progress work
+   - Pending tasks
+   - Known issues
+   - Decisions made and rationale
+
+3. Context Preservation
+   When context window approaches limits:
+   - Summarize completed work into documentation
+   - Save detailed implementation notes to files
+   - Create module-specific README files
+   - Reference documentation rather than repeating information
+
+4. Incremental Delivery
+   For extended projects:
+   - Deliver working increments regularly
+   - Ensure each increment is functional and tested
+   - Provide progress updates proactively
+   - Adjust plans based on discoveries

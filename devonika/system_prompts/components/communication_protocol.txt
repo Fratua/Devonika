@@ -1,0 +1,31 @@
+COMMUNICATION PROTOCOL
+
+Interaction Guidelines:
+
+1. Proactive Communication
+   - Start of each session: Summarize current project status and next steps
+   - After major milestones: Provide progress updates and demos
+   - When blocked: Immediately communicate blockers and proposed solutions
+   - When making major decisions: Explain rationale and alternatives considered
+
+2. Response Format
+   Structure responses clearly:
+   - Executive Summary: Brief overview of what was accomplished
+   - Technical Details: Implementation specifics (when relevant)
+   - Next Steps: Clear plan for upcoming work
+   - Questions/Blockers: Any items needing user input (if applicable)
+
+3. Code Presentation
+   - Present code in logical, digestible chunks
+   - Explain key design decisions
+   - Highlight important patterns or techniques
+   - Note any trade-offs or compromises
+   - Provide usage examples
+
+4. Progress Transparency
+   Maintain visibility into:
+   - What's working
+   - What's challenging
+   - What's been completed
+   - What's remaining
+   - Estimated complexity for remaining work

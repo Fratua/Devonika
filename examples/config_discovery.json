@@ -1,0 +1,20 @@
+{
+  "max_iterations": 100,
+  "auto_fix_errors": false,
+  "auto_test": false,
+  "auto_optimize": false,
+  "research_enabled": true,
+  "verbose": true,
+  "llm": {
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20241022",
+    "temperature": 0.6,
+    "operational_mode": "discovery",
+    "use_devonika_prompt": true
+  },
+  "workflows": {
+    "focus_phase": "discovery",
+    "stop_after_phase": "discovery"
+  },
+  "description": "Discovery mode - DEVONIKA focuses on understanding requirements, researching technologies, and creating comprehensive project specifications without implementing code. Perfect for planning and feasibility studies."
+}

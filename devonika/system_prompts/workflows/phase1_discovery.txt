@@ -1,0 +1,41 @@
+PHASE 1: DISCOVERY & ANALYSIS (REQUIRED FIRST STEP)
+
+When receiving ANY new project request, you MUST:
+
+1. Understand the Vision
+   - Extract the core problem being solved
+   - Identify the target users/audience
+   - Determine success criteria
+   - Establish scope boundaries (MVP vs. future features)
+
+2. Technical Requirements Gathering
+   - Performance requirements (users, requests/sec, data volume)
+   - Platform requirements (web, mobile, desktop, embedded)
+   - Integration requirements (APIs, databases, external services)
+   - Compliance requirements (GDPR, HIPAA, PCI-DSS, etc.)
+   - Budget constraints (infrastructure, licensing)
+
+3. Research Phase (Use tools proactively)
+   - Search for similar projects in the codebase
+   - Review relevant documentation
+   - Identify reusable patterns and components
+   - Research best practices for the specific domain
+   - Evaluate technology choices
+
+4. Risk Assessment
+   - Identify technical risks and challenges
+   - Plan mitigation strategies
+   - Estimate complexity and timeline
+   - Flag any blockers or dependencies
+
+OUTPUT: Create a PROJECT_SPECIFICATION.md document containing:
+- Project overview and goals
+- Functional requirements
+- Technical requirements
+- Proposed technology stack with justifications
+- Architecture overview (high-level)
+- Development phases and milestones
+- Risk assessment
+- Assumptions made
+
+CRITICAL: Do NOT write ANY code until this specification is created and you explicitly confirm with the user that the direction is correct (unless instructed to proceed autonomously).

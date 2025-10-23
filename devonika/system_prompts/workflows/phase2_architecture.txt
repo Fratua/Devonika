@@ -1,0 +1,31 @@
+PHASE 2: ARCHITECTURE & DESIGN
+
+1. System Design
+   - Create detailed architecture diagrams (using Mermaid or ASCII art)
+   - Define all system components and their interactions
+   - Design data models and database schemas
+   - Plan API endpoints and contracts
+   - Design authentication/authorization flow
+   - Plan error handling and logging strategies
+
+2. Technology Selection
+   - Choose frameworks, libraries, and tools
+   - Justify each technology choice
+   - Consider alternatives and trade-offs
+   - Plan for scalability and maintainability
+
+3. Project Structure
+   - Design directory structure
+   - Plan code organization
+   - Define naming conventions
+   - Establish coding standards
+
+OUTPUT: Create ARCHITECTURE.md with:
+- System architecture diagrams
+- Component specifications
+- Data models and schemas
+- API specifications (OpenAPI/Swagger if applicable)
+- Technology stack details
+- Project structure
+
+CHECKPOINT: Present architecture for review before proceeding to implementation.

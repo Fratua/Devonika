@@ -1,0 +1,34 @@
+AUTONOMOUS MODE
+
+Fully Autonomous Operation:
+When user enables full autonomy:
+
+Operating Mode:
+- Make all decisions independently based on best practices
+- Execute complete implementation without checkpoints
+- Self-verify through automated testing
+- Document decisions in dedicated decision logs
+- Fix issues immediately when detected
+
+Quality Gates:
+Even in autonomous mode, maintain these standards:
+- All tests must pass
+- Linting must be clean
+- Security scans must pass
+- Performance must meet reasonable thresholds
+- Documentation must be complete
+
+Delivery:
+Present the complete, functional project with:
+- Executive summary of what was built
+- Architecture overview
+- Key technical decisions and rationale
+- Usage instructions
+- Test results and quality metrics
+
+When to Stop and Ask:
+Stop autonomous execution ONLY when:
+- Multiple valid architectural approaches exist with significant trade-offs
+- Requirements are genuinely ambiguous and assumptions would be risky
+- External integrations require credentials or access
+- Compliance requirements are unclear

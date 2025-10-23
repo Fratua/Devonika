@@ -13,6 +13,18 @@
 
 Devonika is not just another programmer assistant AI tool - it's a complete, autonomous software engineering system equipped with all the tools necessary for anything and everything. From simple CLI tools to complex MMORPGs, Devonika can build it all.
 
+### DEVONIKA System Prompt
+
+At the core of Devonika is the **DEVONIKA system prompt** - a comprehensive, modular system that transforms the AI into an elite full-stack software engineering system. The system prompt defines:
+
+- **Core Identity**: Complete software engineering team in a single agentic system
+- **Engineering Excellence**: Deep expertise across the entire development lifecycle
+- **5-Phase Workflow**: Structured methodology from discovery through deployment
+- **Operational Modes**: Autonomous, guided, discovery, and implementation modes
+- **Vagueness Resilience**: Intelligent handling of incomplete or ambiguous requirements
+
+See [DEVONIKA System Documentation](docs/DEVONIKA_SYSTEM.md) for complete details.
+
 ### Key Features
 
 - **Autonomous Development**: Builds complete projects from start to finish with minimal human intervention
@@ -22,6 +34,7 @@ Devonika is not just another programmer assistant AI tool - it's a complete, aut
 - **Scalable**: Handles projects of any size - from simple scripts to enterprise applications
 - **Self-Healing**: Automatically debugs and fixes errors during development
 - **Adaptive Learning**: Researches technologies and best practices as needed
+- **Multiple Operational Modes**: Choose between autonomous, guided, discovery, and implementation modes
 
 ## Architecture
 
@@ -133,6 +146,37 @@ Note: Extremely large projects may require multiple iterations and human oversig
 
 ## Configuration
 
+### Operational Modes
+
+Devonika supports multiple operational modes via the DEVONIKA system:
+
+#### Autonomous Mode (Maximum Independence)
+```bash
+devonika build "Create a todo app" --config examples/config_autonomous.json
+```
+- Makes all decisions independently
+- No checkpoints or user approvals needed
+- Best for well-defined projects
+
+#### Guided Mode (Strategic Oversight)
+```bash
+devonika build "Create a chat app" --config examples/config_guided.json
+```
+- Presents plans for user approval
+- Checkpoints at major decisions
+- Best for projects requiring oversight
+
+#### Discovery Mode (Planning & Research)
+```bash
+devonika build "Plan an MMORPG" --config examples/config_discovery.json
+```
+- Focuses on requirements and planning
+- Creates comprehensive specifications
+- No code implementation
+- Best for feasibility studies
+
+### Custom Configuration
+
 Create a `config.json` file to customize Devonika's behavior:
 
 ```json
@@ -146,7 +190,14 @@ Create a `config.json` file to customize Devonika's behavior:
   "llm": {
     "provider": "anthropic",
     "model": "claude-3-5-sonnet-20241022",
-    "temperature": 0.7
+    "temperature": 0.7,
+    "operational_mode": "full",
+    "use_devonika_prompt": true
+  },
+  "workflows": {
+    "skip_checkpoints": false,
+    "auto_approve_architecture": false,
+    "auto_approve_deployment": false
   }
 }
 ```
@@ -185,11 +236,12 @@ devonika/
 │   ├── optimizer/      # Performance optimization
 │   ├── manager/        # Project management
 │   ├── intelligence/   # LLM interface
+│   ├── system_prompts/ # DEVONIKA system prompt components
 │   ├── tools/          # Tool integrations
 │   └── cli/            # Command-line interface
 ├── tests/              # Test suite
 ├── docs/               # Documentation
-└── examples/           # Example projects
+└── examples/           # Example projects and configurations
 ```
 
 ## Limitations and Considerations
@@ -212,8 +264,19 @@ MIT License - see LICENSE file for details
 
 Devonika is an experimental project that pushes the boundaries of AI-assisted software development. While it can generate impressive results, always review generated code for security, correctness, and suitability for your use case.
 
+## Documentation
+
+- [Getting Started](docs/GETTING_STARTED.md) - Quick start guide
+- [Architecture](docs/ARCHITECTURE.md) - System architecture details
+- [DEVONIKA System](docs/DEVONIKA_SYSTEM.md) - Complete DEVONIKA system prompt documentation
+- Example Configurations: `examples/config_*.json`
+
 ## Roadmap
 
+- [x] DEVONIKA system prompt integration
+- [x] Multiple operational modes (autonomous, guided, discovery)
+- [x] Modular system prompt architecture
+- [x] 5-phase workflow methodology
 - [ ] Support for more programming languages (Go, Java, C++, etc.)
 - [ ] Web UI interface
 - [ ] Project templates and presets

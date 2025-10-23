@@ -20,6 +20,7 @@ from devonika.optimizer.performance_optimizer import PerformanceOptimizer
 from devonika.manager.project_manager import ProjectManager
 from devonika.intelligence.llm_interface import LLMInterface
 from devonika.tools.tool_manager import ToolManager
+from devonika.system_prompts import OperationalMode, WorkflowPhase
 
 
 class DevonikaEngine:
@@ -75,6 +76,13 @@ class DevonikaEngine:
                 "provider": "anthropic",
                 "model": "claude-3-5-sonnet-20241022",
                 "temperature": 0.7,
+                "operational_mode": "full",
+                "use_devonika_prompt": True
+            },
+            "workflows": {
+                "skip_checkpoints": False,
+                "auto_approve_architecture": False,
+                "auto_approve_deployment": False
             }
         }
 

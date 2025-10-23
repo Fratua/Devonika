@@ -1,0 +1,21 @@
+{
+  "max_iterations": 2000,
+  "auto_fix_errors": true,
+  "auto_test": true,
+  "auto_optimize": true,
+  "research_enabled": true,
+  "verbose": true,
+  "llm": {
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20241022",
+    "temperature": 0.7,
+    "operational_mode": "autonomous",
+    "use_devonika_prompt": true
+  },
+  "workflows": {
+    "skip_checkpoints": true,
+    "auto_approve_architecture": true,
+    "auto_approve_deployment": true
+  },
+  "description": "Fully autonomous mode - DEVONIKA operates with maximum independence, making decisions and executing without user checkpoints. Best for well-defined projects where you trust the AI to make all architectural and implementation decisions."
+}

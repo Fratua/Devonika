@@ -1,0 +1,47 @@
+PHASE 3: IMPLEMENTATION
+
+Test-Driven Development Approach (when appropriate):
+For projects with clear specifications:
+1. Write tests first based on expected functionality
+2. Verify tests fail (red phase)
+3. Implement functionality to pass tests (green phase)
+4. Refactor for quality and maintainability
+5. Document as you build
+
+Iterative Development Process:
+
+1. Start with Core Infrastructure
+   - Set up project scaffolding
+   - Configure build tools and dependencies
+   - Implement basic configuration management
+   - Set up version control (if applicable)
+
+2. Build in Layers
+   - Layer 1: Core domain logic and data models
+   - Layer 2: Data access and persistence
+   - Layer 3: Business logic and services
+   - Layer 4: API/Interface layer
+   - Layer 5: Frontend/UI (if applicable)
+   - Layer 6: Integration and deployment
+
+3. Continuous Integration
+   - Write tests for each component
+   - Ensure all tests pass before moving forward
+   - Run linters and type checkers regularly
+   - Fix issues immediately
+
+4. Documentation Generation
+   - Write inline code documentation
+   - Generate API documentation
+   - Create usage examples
+   - Write README files for each module
+
+Code Quality Standards:
+Automatically enforce:
+- Linting: Run appropriate linters (ESLint, Pylint, RuboCop, etc.)
+- Type Checking: Use TypeScript, mypy, or equivalent where applicable
+- Testing: Maintain >80% code coverage for critical paths
+- Security: Run security scanners (npm audit, Snyk, etc.)
+- Performance: Profile performance-critical sections
+
+CRITICAL: At the end of EVERY significant implementation phase, run ALL quality checks and fix ALL issues before presenting code to user.

@@ -7,6 +7,13 @@ import json
 import logging
 from typing import Dict, Any, Optional, List
 
+from devonika.system_prompts import (
+    SystemPromptManager,
+    OperationalMode,
+    WorkflowPhase,
+    get_devonika_prompt
+)
+
 
 class LLMInterface:
     """
@@ -26,6 +33,14 @@ class LLMInterface:
         # Context management
         self.context_window = []
         self.max_context_messages = 10
+
+        # DEVONIKA system prompt management
+        self.system_prompt_manager = SystemPromptManager()
+        self.operational_mode = OperationalMode(
+            config.get("operational_mode", "full")
+        )
+        self.current_phase = None
+        self.use_devonika_prompt = config.get("use_devonika_prompt", True)
 
     def _init_client(self):
         """Initialize the LLM client"""
@@ -148,3 +163,71 @@ class LLMInterface:
     def get_context(self) -> List[Dict[str, str]]:
         """Get current context"""
         return self.context_window.copy()
+
+    def set_operational_mode(self, mode: OperationalMode) -> None:
+        """
+        Set the operational mode for DEVONIKA.
+
+        Args:
+            mode: The operational mode to use
+        """
+        self.operational_mode = mode
+
+    def set_workflow_phase(self, phase: Optional[WorkflowPhase]) -> None:
+        """
+        Set the current workflow phase.
+
+        Args:
+            phase: The workflow phase to focus on (None to clear)
+        """
+        self.current_phase = phase
+
+    def get_devonika_system_prompt(
+        self,
+        custom_additions: Optional[str] = None
+    ) -> str:
+        """
+        Get the DEVONIKA system prompt based on current settings.
+
+        Args:
+            custom_additions: Additional custom instructions to append
+
+        Returns:
+            Complete DEVONIKA system prompt
+        """
+        if self.current_phase:
+            return self.system_prompt_manager.get_phase_specific_prompt(
+                self.current_phase
+            )
+        else:
+            return self.system_prompt_manager.get_system_prompt(
+                mode=self.operational_mode,
+                custom_additions=custom_additions
+            )
+
+    async def generate_with_devonika(
+        self,
+        prompt: str,
+        response_format: Optional[str] = None,
+        max_tokens: int = 4096,
+        custom_system_additions: Optional[str] = None
+    ) -> str:
+        """
+        Generate a response using DEVONIKA system prompt.
+
+        Args:
+            prompt: The user prompt
+            response_format: Optional format hint ("json", "code", etc.)
+            max_tokens: Maximum tokens to generate
+            custom_system_additions: Additional custom system instructions
+
+        Returns:
+            Generated text response
+        """
+        system_prompt = self.get_devonika_system_prompt(custom_system_additions)
+        return await self.generate(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            response_format=response_format,
+            max_tokens=max_tokens
+        )
